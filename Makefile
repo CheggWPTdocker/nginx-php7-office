@@ -1,5 +1,5 @@
 NAME = cheggwpt/nginx-php7-office
-VERSION = 0.2.5
+VERSION = 0.0.2
 
 .PHONY: all build test tag_latest release ssh
 
@@ -12,7 +12,7 @@ tag_latest:
 	docker tag $(NAME):$(VERSION) $(NAME):latest
 
 run:
-	docker run -p 80:80 --name php -d -t $(NAME):$(VERSION)
+	docker run -p 80:80 --name php-office -i -t $(NAME):$(VERSION)
 
 release: tag_latest
 	@if ! docker images $(NAME) | awk '{ print $$2 }' | grep -q -F $(VERSION); then echo "$(NAME) version $(VERSION) is not yet built. Please run 'make build'"; false; fi
