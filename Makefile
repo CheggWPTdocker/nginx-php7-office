@@ -1,5 +1,5 @@
 NAME = cheggwpt/nginx-php7-office
-VERSION = 0.2.5
+VERSION = 0.0.5
 
 .PHONY: all build test tag_latest release ssh
 
